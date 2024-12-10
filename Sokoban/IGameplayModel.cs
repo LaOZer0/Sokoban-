@@ -4,26 +4,28 @@ using System;
 using System.Reflection.Metadata;
 
 
-
-public interface IGameplayModel
+namespace Sokoban
 {
-	event EventHandler<GameplayEventArgs> Updated;
+    public interface IGameplayModel
+    {
+        event EventHandler<GameplayEventArgs> Updated;
 
-	void Update();
+        void Update();
 
-	void MovePlayer(Direction direction);
+        void MovePlayer(Direction direction);
 
-	public enum Direction : byte
-	{
-		up,
-		down,
-		left,
-		right
-	}
+        public enum Direction : byte
+        {
+            up,
+            down,
+            left,
+            right
+        }
 
-}
+    }
 
-public class GameplayEventArgs : EventArgs
-{
-	public Vector2 PlayerPos { get; set; }
+    public class GameplayEventArgs : EventArgs
+    {
+        public Vector2 PlayerPos { get; set; }
+    }
 }

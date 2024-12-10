@@ -1,30 +1,42 @@
-public class GameplayPresenter
+using System;
+
+namespace Sokoban
 {
-	private IGameplayModel _gameplayModel = null;
-	private IGameplayView _gameplayView = null;
-
-	public GameplayPresenter(IGameplayModel gameplayModel, IGameplayView gameplayView)
+    public class GameplayPresenter
     {
-        _gameplayModel = gameplayModel;
-        _gameplayView = gameplayView;
+        private IGameplayModel _gameplayModel = null;
+        private IGameplayView _gameplayView = null;
 
-        _gameplayView.CycleFinished += ViewModelUpdate;
-        _gameplayView.PlayerMoved += ViewModelMovePlayer;
-        _gameplayModel.Updated += ModelViewUpdate;
-    }
+        public GameplayPresenter(IGameplayModel gameplayModel, IGameplayView gameplayView)
+        {
+            _gameplayModel = gameplayModel;
+            _gameplayView = gameplayView;
 
-    private void ViewModelMovePlayer(object sender, ControlsEventArgs e)
-    {
-        _gameplayModel.MovePlayer(e.Direction);
-    }
+            _gameplayView.CycleFinished += ViewModelUpdate;
+            _gameplayView.PlayerMoved += ViewModelMovePlayer;
+            _gameplayModel.Updated += ModelViewUpdate;
+        }
 
-    private void ModelViewUpdate(object sender, ControlsEventArgs e)
-    {
-        _gameplayView.LoadGameCycleParametrs(e.PlayerPos);
-    }
+        public void LaunchGame()
+        {
+            _gameplayView.Run();
+        }
 
-    private void ViewModelUpdate(object sender, ControlsEventArgs e)
-    {
-        _gameplayModel.Update();
+        private void ViewModelMovePlayer(object sender, ControlsEventArgs e)
+        {
+            _gameplayModel.MovePlayer(e.Direction);
+        }
+
+        private void ModelViewUpdate(object sender, GameplayEventArgs e)
+        {
+            _gameplayView.LoadGameCycleParametrs(e.PlayerPos);
+        }
+
+        private void ViewModelUpdate(object sender, EventArgs e)
+        {
+            _gameplayModel.Update();
+        }
+
+        
     }
 }
