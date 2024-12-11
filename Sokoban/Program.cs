@@ -6,7 +6,7 @@ public static class Program
     [STAThread]
     static void Main()
     {
-        GameplayPresenter presenter = new GameplayPresenter(new GameCycle(), new GameCycleView());
-        presenter.LaunchGame();
+        GameController game = new GameController();
+        game.Run();
     }
 }

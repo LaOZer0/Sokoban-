@@ -5,8 +5,20 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/Игорь/source/repos/Sokoban-/Sokoban/Content/ball.png</File>
+    <File>C:/Users/Игорь/source/repos/Sokoban-/Sokoban/Content/box.png</File>
+    <File>C:/Users/Игорь/source/repos/Sokoban-/Sokoban/Content/boxOnSpot.png</File>
+    <File>C:/Users/Игорь/source/repos/Sokoban-/Sokoban/Content/ground.png</File>
+    <File>C:/Users/Игорь/source/repos/Sokoban-/Sokoban/Content/player.png</File>
+    <File>C:/Users/Игорь/source/repos/Sokoban-/Sokoban/Content/spot.png</File>
+    <File>C:/Users/Игорь/source/repos/Sokoban-/Sokoban/Content/wall.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

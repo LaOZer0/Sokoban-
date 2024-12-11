@@ -25,3 +25,9 @@ C:\Users\Игорь\source\repos\Sokoban-\Sokoban\obj\Debug\net6.0\refint\Sokoba
 C:\Users\Игорь\source\repos\Sokoban-\Sokoban\obj\Debug\net6.0\Sokoban.pdb
 C:\Users\Игорь\source\repos\Sokoban-\Sokoban\obj\Debug\net6.0\Sokoban.genruntimeconfig.cache
 C:\Users\Игорь\source\repos\Sokoban-\Sokoban\obj\Debug\net6.0\ref\Sokoban.dll
+C:\Users\Игорь\source\repos\Sokoban-\Sokoban\bin\Debug\net6.0\Content\box.xnb
+C:\Users\Игорь\source\repos\Sokoban-\Sokoban\bin\Debug\net6.0\Content\boxOnSpot.xnb
+C:\Users\Игорь\source\repos\Sokoban-\Sokoban\bin\Debug\net6.0\Content\ground.xnb
+C:\Users\Игорь\source\repos\Sokoban-\Sokoban\bin\Debug\net6.0\Content\player.xnb
+C:\Users\Игорь\source\repos\Sokoban-\Sokoban\bin\Debug\net6.0\Content\spot.xnb
+C:\Users\Игорь\source\repos\Sokoban-\Sokoban\bin\Debug\net6.0\Content\wall.xnb
