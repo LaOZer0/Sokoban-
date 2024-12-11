@@ -26,9 +26,9 @@ namespace Sokoban
 
         private static string levelPath;
 
-        private static List<Vector2> Boxes = new List<Vector2>();
+        private static readonly List<Vector2> Boxes = new();
 
-        private static List<Vector2> Spots = new List<Vector2>();
+        private static readonly List<Vector2> Spots = new();
 
         public Level()
         {
@@ -105,7 +105,8 @@ namespace Sokoban
 
                     UpdateSpots(i, j);
 
-                    if (i == Player.GetPossition().X / GameConstants.TILE_SIZE_WIDTH && j == Player.GetPossition().Y / GameConstants.TILE_SIZE_HEIGHT)
+                    if (i == Player.GetPossition().X / GameConstants.TILE_SIZE_WIDTH
+                        && j == Player.GetPossition().Y / GameConstants.TILE_SIZE_HEIGHT)
                     {
                         LevelMap[i, j] = GameConstants.PLAYER;
                     }
@@ -128,7 +129,10 @@ namespace Sokoban
                     break;
                 case GameConstants.PLAYER:
                     LevelMap[x, y] = GameConstants.PLAYER;
-                    Player.SetPosition(new Vector2(x * GameConstants.TILE_SIZE_WIDTH, y * GameConstants.TILE_SIZE_HEIGHT));
+                    Player.SetPosition(new Vector2(
+                        x * GameConstants.TILE_SIZE_WIDTH,
+                        y * GameConstants.TILE_SIZE_HEIGHT)
+                        );
                     break;
                 case GameConstants.WALL:
                     LevelMap[x, y] = GameConstants.WALL;

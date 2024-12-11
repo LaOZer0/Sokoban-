@@ -10,12 +10,12 @@ namespace Sokoban
 {
     public class GameController : Game
     {                
-        private GraphicsDeviceManager _graphics;
+        private readonly GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Level _level;
-        private Player _player;
+        private readonly Player _player;
         private bool isPressed = false;
-        private List<string> levelPaths;
+        private readonly List<string> levelPaths;
         private string currentLevelPath;
 
         public GameController()
@@ -92,10 +92,11 @@ namespace Sokoban
                 isPressed = false;
             }
 
-            if (IsWin())
+            if (IsWin() && levelPaths.Count != 0)
             {
                 LoadNextLevel();
             }
+            
 
             base.Update(gameTime);
             
@@ -161,10 +162,6 @@ namespace Sokoban
 
         private void LoadNextLevel()
         {
-            if (levelPaths.Count == 0)
-            {
-                Exit();
-            }
             currentLevelPath = levelPaths.FirstOrDefault();
             if (_level != null)
             {
